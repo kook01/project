@@ -14,6 +14,9 @@ namespace ictbis2
         classini clsini = new classini();
         encryptsn ensn = new encryptsn();
         decryptsn desn = new decryptsn();
+        public string tmpdatasn1 = string.Empty;
+        public string tmpdatasn_ictbis = string.Empty;
+        public string[] dataexpress = null;
         public frmgensn()
         {
             InitializeComponent();
@@ -23,19 +26,15 @@ namespace ictbis2
 
         private void showdatafirst()
         {
-            string[] dataexpress = null;
+            
             dataexpress = clsini.readdatatxtfile();
-            txtboxexpresssn.Text = dataexpress[0];
-
-            if (clsini.IniWriteValue("SN_Express", "SN", dataexpress[0]))
-            {
-              //
-            }
-            else
-            {
-                label4.Text = "ไม่สามารถเพิ่มข้อมูลได้";
-            }
-        }
+            // Read data SN1 from text file(Serial.TXT) to show in textbox
+            tmpdatasn1 = dataexpress[0];  
+            txtboxexpresssn.Text = tmpdatasn1;
+            //Read data from data Encrpt to textbox
+            tmpdatasn_ictbis = clsini.IniReadValue("SN_ictbis", "SN");
+            txtboxdataencrpt.Text = tmpdatasn_ictbis.Trim().ToString();
+       }
 
         private void btnchkgenini_Click(object sender, EventArgs e)
         {
@@ -72,23 +71,6 @@ namespace ictbis2
 
 
             splittmp = new string[abc];
-            //splittmp[1] = tmp.Substring(5, 3); //Year
-            //splittmp[2] = tmp.Substring(11, 1); //Month
-            //splittmp[3] = tmp.Substring(17, 1); //Month
-            //Debug.Print("data year of " + tmp + " is " + splittmp[1]);
-            //Debug.Print("data month1 of " + tmp + " is " + splittmp[2]);
-            //Debug.Print("data month2 of " + tmp + " is " + splittmp[3]);
-
-            //splittmp[0] = tmp.Substring(0, 1);
-            //splittmp[1] = tmp.Substring(1, 1);
-            //splittmp[2] = tmp.Substring(2, 1);
-            //splittmp[3] = tmp.Substring(3, 1);
-            //splittmp[4] = tmp.Substring(4, 1);
-            //splittmp[5] = tmp.Substring(5, 1);
-            //splittmp[6] = tmp.Substring(6, 1);
-            //splittmp[7] = tmp.Substring(7, 1);
-            //splittmp[8] = tmp.Substring(8, 1);
-            //splittmp[9] = tmp.Substring(9, 1);
             for (int i = 0; i < abc; i++)
             {
                 splittmp[i] = tmp.Substring(i, 1);
@@ -99,8 +81,6 @@ namespace ictbis2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //  encryptsn ensn = new encryptsn();
-            //  decryptsn desn = new decryptsn();
             ensn.splitdt();
             Debug.Print("Data original is W-10E-028915 ");
             Debug.Print("Data Encrpt is " + ensn.EncrptData());
@@ -112,6 +92,14 @@ namespace ictbis2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (clsini.IniWriteValue("SN_Express", "SN", tmpdatasn1))
+            {
+                //
+            }
+            else
+            {
+                label4.Text = "ไม่สามารถเพิ่มข้อมูลได้";
+            }
             ensn.splitdt();
             txtboxdataencrpt.Text = ensn.EncrptData();
             if (clsini.IniWriteValue("SN_ictbis", "SN", ensn.EncrptData()))
@@ -133,7 +121,7 @@ namespace ictbis2
 
         private void frmgensn_Load(object sender, EventArgs e)
         {
-            this.MaximumSize = new Size(486,224);
+            //this.MaximumSize = new Size(486,224);
         }
 
         private void btnexit_Click(object sender, EventArgs e)
