@@ -141,6 +141,7 @@ namespace ictbis2
             if (MessageBox.Show("Exit application?", "ออกจากโปรแกรม", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 Application.Exit(); //comment
+                //comment2
             }
             else
             {
