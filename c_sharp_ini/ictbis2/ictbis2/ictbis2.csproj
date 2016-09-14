@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chksn.cs" />
     <Compile Include="classini.cs" />
     <Compile Include="decryptsn.cs" />
     <Compile Include="encryptsn.cs" />

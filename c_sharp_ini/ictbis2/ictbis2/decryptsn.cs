@@ -41,11 +41,11 @@ namespace ictbis2
         }
 
                 
-        public void splitdataback()
+        public void splitdataback(string paramsn_ictbis)
         {
             //081WE7E0RUX95211099
-            string tmp = "081WE7E0RUX95211099";
-
+           // string tmp = "081WE7E0RUX95211099";
+            string tmp = paramsn_ictbis;
             /*
             *splittmp[1] = tmp.Substring(5, 3); //Year
             splittmp[2] = tmp.Substring(11, 1); //Month
@@ -58,7 +58,7 @@ namespace ictbis2
             }
         }
 
-        public void mergeData4YearMonth()
+        private void mergeData4YearMonth()
         {
             this.hexyear = this.data4Encrp[5] + this.data4Encrp[6] + this.data4Encrp[7];
             this.hexmonth = this.data4Encrp[11];
@@ -81,9 +81,9 @@ namespace ictbis2
             this.sn1 += this.data4Encrp[16] + this.data4Encrp[13] + this.data4Encrp[1] + this.data4Encrp[18] + this.data4Encrp[2]+ this.data4Encrp[12];
         }
 
-        public void Showdataback()
+        public void Showdataback(string paramencrp)
         {
-            this.splitdataback();
+            this.splitdataback(paramencrp);
             this.mergeData4YearMonth();
             this.mergedata4SN1();
         }

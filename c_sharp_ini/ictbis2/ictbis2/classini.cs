@@ -28,9 +28,9 @@ namespace ictbis2
             this.inifilename = this.chkfileini("confgsn");
             if (CreateInifile())
             {
-               // chkpathtxtfile();
+                // chkpathtxtfile();
             }
-            
+
         }
 
         public bool IniWriteValue(string Section, string Key, string Value)  //void
@@ -49,7 +49,7 @@ namespace ictbis2
             return temp.ToString();
         }
 
-        public string chkfileini(string filename) 
+        public string chkfileini(string filename)
         {
             string returnfilename = string.Empty;
             string directory = AppDomain.CurrentDomain.BaseDirectory;
@@ -63,7 +63,7 @@ namespace ictbis2
             bool boolreturn;
             if (File.Exists(this.inifilename))
             {
-               // Nothing to do.
+                // Nothing to do.
                 boolreturn = false;
             }
             else
@@ -82,9 +82,18 @@ namespace ictbis2
             string directory = AppDomain.CurrentDomain.BaseDirectory;
             string readdata = this.IniReadValue("serialname", "path");
             this.pathtxtfile = directory + "\\Serial.TXT";
+            if (File.Exists(this.pathtxtfile))
+            {
+                string[] lines = File.ReadAllLines(this.pathtxtfile, Encoding.UTF8);
+                return lines;
+            }
+            else
+            {
+                return null;
+            }
+
             //
-            string[] lines = File.ReadAllLines(this.pathtxtfile, Encoding.UTF8);
-            return lines;
+            
         }
 
 
