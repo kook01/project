@@ -1,0 +1,8 @@
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\bin\Debug\ictbis.exe
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\bin\Debug\ictbis.pdb
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\obj\x86\Debug\ictbis.csproj.GenerateResource.Cache
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\obj\x86\Debug\ictbis.exe
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\obj\x86\Debug\ictbis.pdb
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\obj\x86\Debug\ictbis.csprojResolveAssemblyReference.cache
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\obj\x86\Debug\ictbis2.frmchk.resources
+D:\MyApp_localOnly\c_sharp_ini\ictbis\ictbis\obj\x86\Debug\ictbis2.Properties.Resources.resources

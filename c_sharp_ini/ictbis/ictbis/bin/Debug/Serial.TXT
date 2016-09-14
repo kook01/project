@@ -1,0 +1,33 @@
+W-10E-028915
+R91U4XU8
+ASDFASDF4325588SEXFWSHLOH284
+
+ASDFASDF4325588SEXFWSHLOH284
+
+1. replace "-","" to sn1 = W10E028915
+2. select data from mark selected (sn1-2, Date(year))
+3. swap data to format
+
+
+
+Hexadecimal value of W is 57
+Hexadecimal value of 1 is 31
+Hexadecimal value of 0 is 30
+Hexadecimal value of E is 45
+Hexadecimal value of 0 is 30
+Hexadecimal value of 2 is 32
+Hexadecimal value of 8 is 38
+Hexadecimal value of 9 is 39
+Hexadecimal value of 1 is 31
+Hexadecimal value of 5 is 35
+
+2016
+data pad2 is 11111100000
+data Left pad2 is 0000011111100000
+binary(0000011111100000) back2hex is 7E0
+
+7E0 --> 0000011111100000 --> 11111100000 --> 2016
+
+http://apachefriends.org/en/faq-xampp-windows.html#antivirus
+
+
