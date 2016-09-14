@@ -16,3 +16,12 @@ D:\MyApp_localOnly\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.csp
 D:\MyApp_localOnly\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.frmgensn.resources
 D:\MyApp_localOnly\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.Properties.Resources.resources
 D:\MyApp_localOnly\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.csproj.GenerateResource.Cache
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\bin\Debug\ictbis2.exe.config
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.exe
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.pdb
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\bin\Debug\ictbis2.exe
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\bin\Debug\ictbis2.pdb
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.csprojResolveAssemblyReference.cache
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.frmgensn.resources
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.Properties.Resources.resources
+D:\Data-kook-05May2016\project\project\c_sharp_ini\ictbis2\ictbis2\obj\x86\Debug\ictbis2.csproj.GenerateResource.Cache
