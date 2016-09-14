@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ictbis2", "ictbis2\ictbis2.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ictbis", "..\ictbis\ictbis\ictbis.csproj", "{DCA2C9FF-C797-40D2-B322-FB0FF532B50E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winapptaskbar", "..\winapptaskbar\winapptaskbar.csproj", "{FD9F4F79-6FA4-47DE-9827-39809F15A254}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{DCA2C9FF-C797-40D2-B322-FB0FF532B50E}.Debug|x86.Build.0 = Debug|x86
 		{DCA2C9FF-C797-40D2-B322-FB0FF532B50E}.Release|x86.ActiveCfg = Release|x86
 		{DCA2C9FF-C797-40D2-B322-FB0FF532B50E}.Release|x86.Build.0 = Release|x86
+		{FD9F4F79-6FA4-47DE-9827-39809F15A254}.Debug|x86.ActiveCfg = Debug|x86
+		{FD9F4F79-6FA4-47DE-9827-39809F15A254}.Debug|x86.Build.0 = Debug|x86
+		{FD9F4F79-6FA4-47DE-9827-39809F15A254}.Release|x86.ActiveCfg = Release|x86
+		{FD9F4F79-6FA4-47DE-9827-39809F15A254}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

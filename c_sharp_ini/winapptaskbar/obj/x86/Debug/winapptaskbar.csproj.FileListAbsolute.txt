@@ -1,0 +1,7 @@
+D:\MyApp_localOnly\c_sharp_ini\winapptaskbar\bin\Debug\winapptaskbar.exe
+D:\MyApp_localOnly\c_sharp_ini\winapptaskbar\bin\Debug\winapptaskbar.pdb
+D:\MyApp_localOnly\c_sharp_ini\winapptaskbar\obj\x86\Debug\winapptaskbar.Form1.resources
+D:\MyApp_localOnly\c_sharp_ini\winapptaskbar\obj\x86\Debug\winapptaskbar.Properties.Resources.resources
+D:\MyApp_localOnly\c_sharp_ini\winapptaskbar\obj\x86\Debug\winapptaskbar.csproj.GenerateResource.Cache
+D:\MyApp_localOnly\c_sharp_ini\winapptaskbar\obj\x86\Debug\winapptaskbar.exe
+D:\MyApp_localOnly\c_sharp_ini\winapptaskbar\obj\x86\Debug\winapptaskbar.pdb
