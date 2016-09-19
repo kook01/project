@@ -13,7 +13,7 @@ class Usermng {
     private $passwords;
 
     public function __construct() {
-        
+        $objcondb = new classconndb();
     }
 
     function set_password($parampassword) {
@@ -41,7 +41,7 @@ class Usermng {
     }
 
     public function getnames() {
-        $objcondb = new classconndb();
+      //  $objcondb = new classconndb();
         $sql = "SELECT username,firstname FROM tb_user WHERE permissionid='1'";
         if ($objcondb->connectdbs()) {
             if ($result = mysqli_query($objcondb->con, $sql)) {
@@ -56,6 +56,16 @@ class Usermng {
         $objcondb->closedbs();
     }
 
+    public function qdataall(){
+     //   $objcondb = new classconndb();
+        $sql = "SELECT * FROM tb_user";
+        if($objcondb->connectdbs()){
+            if($result = mysqli_query($objcondb->con, $sql)){
+                // DO this
+            }
+        }
+    }
+    
     public function getnameswparam() {
         $objcondb = new classconndb();
         $perid = 1;
