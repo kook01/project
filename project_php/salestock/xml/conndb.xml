@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<connectdb>
+	<conndb1>
+		<servername>localhost</servername>
+		<username>root</username>
+		<passwords>passw0rd.</passwords>
+		<dbname>maincore</dbname>
+        </conndb1>
+</connectdb>
