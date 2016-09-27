@@ -6,4 +6,10 @@
 		<passwords>passw0rd.</passwords>
 		<dbname>maincore</dbname>
         </conndb1>
+        <conndb2>
+		<servername>localhost</servername>
+		<username>root</username>
+		<passwords>passw0rd.</passwords>
+		<dbname>inventories</dbname>
+        </conndb2>
 </connectdb>
