@@ -1,5 +1,6 @@
 <?php
-include_once 'class/pck_db/classconndb.php';
+
+include_once '../../bean/pck_db/classconndb.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,9 +12,18 @@ class Usermng {
     private $fname;
     private $username;
     private $passwords;
+    private $permissionid;
 
     public function __construct() {
         $objcondb = new classconndb();
+    }
+
+    function set_permissid($parampermisid) {
+        $this->permissionid = $parampermisid;
+    }
+
+    function get_permisid() {
+        return $this->permissionid;
     }
 
     function set_password($parampassword) {
@@ -40,8 +50,42 @@ class Usermng {
         return $this->fname;
     }
 
+    public function qlogin() {
+        $chklogin = FALSE;
+        $sql = "select firstname,permissionid from tb_user where username = ? and password =?";
+        $objcondb = new classconndb();
+        if ($objcondb->connectdbs()) {
+            $stmt = mysqli_prepare($objcondb->con, $sql);
+            mysqli_stmt_bind_param($stmt, "ss", $this->get_username(), $this->get_password());
+            /* execute query */
+            $stmt->execute();
+            /* store result */
+            $stmt->store_result();
+            $stmt->bind_result($fname, $permisid);
+            /* get the number of rows */
+            $cntrow = $stmt->num_rows();
+            if ($cntrow == 1) {
+                while ($stmt->fetch()) {
+                    $this->set_fname($fname);
+                    $this->set_permissid($permisid);
+                }
+                $chklogin = TRUE;
+            } else {
+                $chklogin = FALSE;
+            }
+            /* close statement */
+            $stmt->free_result();
+            $stmt->close();
+        } else {
+            $chklogin = FALSE;
+        }
+
+        $objcondb->closedbs();
+        return $chklogin;
+    }
+
     public function getnames() {
-      //  $objcondb = new classconndb();
+        $objcondb = new classconndb();
         $sql = "SELECT username,firstname FROM tb_user WHERE permissionid='1'";
         if ($objcondb->connectdbs()) {
             if ($result = mysqli_query($objcondb->con, $sql)) {
@@ -56,16 +100,16 @@ class Usermng {
         $objcondb->closedbs();
     }
 
-    public function qdataall(){
-     //   $objcondb = new classconndb();
+    public function qdataall() {
+        //   $objcondb = new classconndb();
         $sql = "SELECT * FROM tb_user";
-        if($objcondb->connectdbs()){
-            if($result = mysqli_query($objcondb->con, $sql)){
+        if ($objcondb->connectdbs()) {
+            if ($result = mysqli_query($objcondb->con, $sql)) {
                 // DO this
             }
         }
     }
-    
+
     public function getnameswparam() {
         $objcondb = new classconndb();
         $perid = 1;
@@ -85,22 +129,22 @@ class Usermng {
         }
         $objcondb->closedbs();
     }
-    
-    public function ins(){
+
+    public function ins() {
         $paramusername = "Thanita";
         $password = "password";
         $paramfname = "Thanita_name";
         $paramper = 2;
-        
+
         $sql = "insert into tb_user(username,password,firstname,permissionid)values(?,?,?,?)";
-      //  $sql .= " values(?,?,?,?)";
+        //  $sql .= " values(?,?,?,?)";
         $objcondb = new classconndb();
-        if($objcondb->connectdbs()){
-            if($stmt = mysqli_prepare($objcondb->con, $sql)){
-                mysqli_stmt_bind_param($stmt, "sssi", $paramusername,$password,$paramfname,$paramper);
-                if($stmt->execute()){
+        if ($objcondb->connectdbs()) {
+            if ($stmt = mysqli_prepare($objcondb->con, $sql)) {
+                mysqli_stmt_bind_param($stmt, "sssi", $paramusername, $password, $paramfname, $paramper);
+                if ($stmt->execute()) {
                     $returndat = "insert completed";
-                }else{
+                } else {
                     $returndat = "insert not completed";
                 }
             }
@@ -110,21 +154,21 @@ class Usermng {
         return $returndat;
     }
 
-    public function ups(){
+    public function ups() {
         $paramusername = "Thanita";
         $password = "password";
         $paramfname = "Thanita_name_up";
         $paramper = 2;
-        
+
         $sql = "update tb_user set username=?,password=?,";
         $sql .= "firstname=? where permissionid=?";
         $objcondb = new classconndb();
-        if($objcondb->connectdbs()){
-            if($stmt = mysqli_prepare($objcondb->con, $sql)){
-                mysqli_stmt_bind_param($stmt, "sssi", $paramusername,$password,$paramfname,$paramper);
-                if($stmt->execute()){
+        if ($objcondb->connectdbs()) {
+            if ($stmt = mysqli_prepare($objcondb->con, $sql)) {
+                mysqli_stmt_bind_param($stmt, "sssi", $paramusername, $password, $paramfname, $paramper);
+                if ($stmt->execute()) {
                     $returndat = "update completed";
-                }else{
+                } else {
                     $returndat = "update not completed";
                 }
             }
@@ -133,5 +177,7 @@ class Usermng {
         $objcondb->closedbs();
         return $returndat;
     }
+
 }
+
 ?>
