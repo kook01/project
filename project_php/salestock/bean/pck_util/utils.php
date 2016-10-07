@@ -88,8 +88,8 @@ class utils {
         $dateformat = $datetimenow->format('Y-m-d H:i:s');
         $this->set_dtnow($dateformat);
     }
-    
-    public function splitDT($paramsplitdt){
+
+    public function splitDT($paramsplitdt) {
         //parameter format is yyyy-mm-dd HH:MM:SS
         $splitdt = explode(" ", $paramsplitdt);
         $splitdate = explode("-", $splitdt[0]);
@@ -102,8 +102,13 @@ class utils {
         $this->set_hour($splittime[0]);
         $this->set_minute($splittime[1]);
         $this->set_second($splittime[2]);
-   }
+    }
 
-} // end this class
+    function msgalert($msg) {
+        echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+    }
 
+}
+
+// end this class
 ?>

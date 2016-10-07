@@ -8,43 +8,26 @@ include_once '../../bean/pck_util/utils.php';
  * and open the template in the editor.
  */
 $objsuppliers = new suppliers();
-//if(isset($_POST["submit"])){
-//    //$formData = $_POST["frmsupplieres"]; // dont forget to sanitize any post data
-//   //than you can call your class function and pass this data
-////   $class = new class();
-////   $class->ProcessRegistrationFunction($formData);
-// }
-// 
-// if(isset($_POST["submit"])){
-//     $frmdata = $_POST['frmsupplieres'];
-//     $objsuppliers->set_suppliername($formData == 'txtboxsuppliername');
-//    echo "data suppliername is : " . $objsuppliers->get_suppliername();
-//    $returndat = "true";
-// }else{
-//    $returndat = "false";
-//
-// }
-//      echo "data return is : " . $returndat;
-    
-if(isset($_POST)){    
-
-//         $objUtils = new utils();
-//         $objUtils->DtNow();
-    
-         $objsuppliers->set_suppliername($_POST['txtboxsuppliername']);
-         $objsuppliers->set_supplieraddr($_POST['txtboxmultisuppleraddr']);
-         $objsuppliers->set_suppliertel($_POST['txtmultisuppliertel']);
-         $objsuppliers->set_suppliercontact($_POST['txtboxsuppliercontact']);
-         $objsuppliers->set_supplierremark($_POST['txtboxremark']);
-              
-//        echo "data is : " . $objsuppliers->get_suppliername() . ":" .$objsuppliers->get_supplieraddr() . ":" 
-//                . $objsuppliers->get_suppliertel() . ":" . $objsuppliers->get_suppliercontact() . ":" 
-//                . $objsuppliers->get_supplierremark() . $objsuppliers->get_supplierdtcreate(); 
-         $datareturn = $objsuppliers->ups();
-         echo " data return is " . $datareturn;
-                
-}else{
-   
+if (isset($_POST)) {
+    $objsuppliers->set_suppliername($_POST['txtboxsuppliername']);
+    $objsuppliers->set_supplieraddr($_POST['txtboxmultisupplieraddr']);
+    $objsuppliers->set_suppliertel($_POST['txtmultisuppliertel']);
+    $objsuppliers->set_suppliercontact($_POST['txtboxsuppliercontact']);
+    $objsuppliers->set_supplierremark($_POST['txtboxremark']);
+    $tmp_supplierid = $_POST['txtboxsupplierid_hidden'];
+    if (($tmp_supplierid == null) || ($tmp_supplierid == "")) {
+        //Insert
+        $datareturn = $objsuppliers->ins();
+    } else {
+        //Update
+        $objsuppliers->set_supplierid($tmp_supplierid);
+        $datareturn = $objsuppliers->ups();
+    }
+    //echo " data return is " . $datareturn;
+    echo json_encode($datareturn);
+} else {
+//Error and and return page   
+    $datareturn = "Process can not success,please type again.";
+    echo json_encode($datareturn);
 }
-
 ?>

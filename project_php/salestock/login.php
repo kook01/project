@@ -9,7 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <script type="text/javascript" src="js/jQuery3.1.0.js"></script>
-        <script type="text/javascript" src="js/login.js"/></script>
+        <script type="text/javascript" src="js/jslogin.js.js"/></script>
     </head>
     <body>
         <form action="controller/pck_login/constrlogin.php" method="POST">

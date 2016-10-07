@@ -1,9 +1,8 @@
 <?php
-
-//include_once 'bean/pck_db/classconndb_invent.php';
-include_once '../../bean/pck_db/classconndb_invent.php';
-//include_once '../pck_util/utils.php';
-include_once '../../bean/pck_util/utils.php';
+require_once '../../bean/pck_db/classconndb_invent.php';
+require '../../bean/pck_util/utils.php';
+//include_once '../../bean/pck_db/classconndb_invent.php';
+//include_once '../../bean/pck_util/utils.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -113,6 +112,7 @@ class suppliers {
         }
         mysqli_free_result($result);
         $objcondb->closedbs();
+
     }
 
 //Insert

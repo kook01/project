@@ -1,6 +1,7 @@
 <?php
 
 include_once '../../bean/pck_user/usermng.php';
+include_once '../../bean/pck_util/utils.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -39,8 +40,30 @@ if (isset($_POST)) {
             echo "go to other page";
         }
     } else {
-        echo "don't have data";
+        $msg = "Can not login, plase check your username/password.";
+        $objutilalert = new utils();
+        $objutilalert->msgalert($msg);
+        $url = "../../index.php";
+        redirect($url);    
     }
+    
+    
+    function redirect($url) {
+    if(!headers_sent()) {
+        //If headers not sent yet... then do php redirect
+        header('Location: '.$url);
+        exit;
+    } else {
+        //If headers are sent... do javascript redirect... if javascript disabled, do html redirect.
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="'.$url.'";';
+        echo '</script>';
+        echo '<noscript>';
+        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+        echo '</noscript>';
+        //exit;
+    }
+}
 }// end of isset
 ?> 
 
