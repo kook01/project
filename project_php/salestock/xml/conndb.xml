@@ -12,4 +12,10 @@
 		<passwords>passw0rd.</passwords>
 		<dbname>inventories</dbname>
         </conndb2>
+        <conndb3>
+		<servername>localhost</servername>
+		<username>root</username>
+		<passwords>passw0rd.</passwords>
+		<dbname>productes</dbname>
+        </conndb3>
 </connectdb>

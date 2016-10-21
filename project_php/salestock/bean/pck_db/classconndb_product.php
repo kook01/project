@@ -1,5 +1,5 @@
 <?php
-
+//include_once '../../xml/conndb.xml';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +11,7 @@
  *
  * @author Somphop
  */
-class classconndb {
+class classconndb_invent {
 
     //put your code here
 //    private $servername = "localhost";
@@ -69,12 +69,12 @@ class classconndb {
 
     public function Readxml() {
         $filexml = "../../xml/conndb.xml";
-        $xml = simplexml_load_file($filexml) or die("Error: Cannot create object");
+        $xml = simplexml_load_file( $filexml) or die("Error: Cannot create object");//xml/conndb.xml
         // print_r($xml);
-        $this->set_servername($xml->conndb1->servername);
-        $this->set_username($xml->conndb1->username);
-        $this->set_pwd($xml->conndb1->passwords);
-        $this->set_dbname($xml->conndb1->dbname);
+        $this->set_servername($xml->conndb3->servername);
+        $this->set_username($xml->conndb3->username);
+        $this->set_pwd($xml->conndb3->passwords);
+        $this->set_dbname($xml->conndb3->dbname);
     }
 
     public function connectdbs() {
@@ -87,7 +87,6 @@ class classconndb {
         } else {
             //   echo "Database Connected.";
             $result = TRUE;
-            mysqli_set_charset($this->con, "utf8");
             return $result;
         }
     }
